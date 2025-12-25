@@ -2,3 +2,6 @@
 IVcurve/**/*.png
 IVcurve/**/*.pdf
 IVcurve/**/*.svg
+
+# ignore cache 
+__pycache__
