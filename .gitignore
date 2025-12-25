@@ -1,0 +1,4 @@
+# ignore imgs of IVcurves
+IVcurve/**/*.png
+IVcurve/**/*.pdf
+IVcurve/**/*.svg
