@@ -240,7 +240,7 @@ def load_poly_params(csv_path, device=torch.device('cuda:0')):
     
     return poly_params
 
-def load_piecewise(basis_mode='pos-norm', fit_mode='spline', fit_degree=10, 
+def load_piecewise(basis_mode='pos-norm', fit_mode='univariate', fit_degree=10, 
                    device=torch.device('cuda:0')):
     basis_mode_mapping = {
         'pos-norm': 'PosNorm',      ## [0, 1]
