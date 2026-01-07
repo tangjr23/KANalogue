@@ -63,9 +63,18 @@ To set up the environment, you can use either conda or pip.
 ### Run
 To train a KAN network, run the following command:
 ```bash
-python train_exp.py --exp_name exp1 \
+python trainer.py --exp_name exp1 \
                     --dataset MNIST \
                     --acti None \
                     --norm_layer batch
 ```
 You could use `python trainer.py --help` or `python trainer.py -h` to see all available options.
+
+## Compare with other model
+We present a comparison of an MLP using a tunnel diode activation function and the original KAN. To train the models, run the following command:
+```bash
+python -m scripts.MLP_KAN_trainer.py --exp_name exp1 \
+                    --dataset MNIST \
+                    --model_name MLP_CMTDAF
+```
+You could use `python -m scripts.MLP_KAN_trainer.py --help` or `python -m scripts.MLP_KAN_trainer.py -h` to see all available options.
