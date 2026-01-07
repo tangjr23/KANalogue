@@ -85,3 +85,35 @@ def noise_analysis_parse_arguments():
                         help='Noise distribution. "binary" by default.')
 
     return parser.parse_args()
+
+def MLP_KAN_train_parse_arguments():
+    parser = argparse.ArgumentParser(description='Comparison table Param Search Trainning')
+
+    parser.add_argument('--learning_rate', type=float, default=0.0001, 
+                        help='Learning rate of training progress.')
+    parser.add_argument('--batch_size', type=int, default=256, 
+                        help='Integer. 256 by default.')
+    parser.add_argument('--dataset', type=str, default='MNIST', 
+                        choices=['MNIST', 'FMNIST', 'cifar10'], 
+                        help='Choose a dataset: MNIST, FMNIST, cifar10')
+    parser.add_argument('--device', type=str, default='cuda', 
+                        help="use 'CUDA_VISIBLE_DEVICES =' to set device id.")
+    
+    parser.add_argument('--max_epochs', type=int, default=10_000, 
+                        help='Integer. 10_000 by default.')
+    parser.add_argument('--patience', type=int, default=10, 
+                        help='Integer. 10 by default.')
+    parser.add_argument("--model_name", type=str, default="MLP_CMTDAF",
+                        choices=["MLP_RTDAF", "MLP_CMTDAF", "MLP_MOSFETac", "BSplineKAN", "GottliebKAN"],
+                        help="Model name, e.g. MLP_RTDAF / BSplineKAN.")
+    parser.add_argument('--exp_name', type=str, default=None, 
+                        help='Name this exp. Then all the results will be in results/exp-name.')
+    parser.add_argument('--search_mode', type=str, default='random', 
+                        choices=['grid', 'random'], 
+                        help='Searching mode. Random search by default.')
+    
+    parser.add_argument('--hidden', type=int, nargs='+', default=[64], 
+                        help='Hidden dims. [64] by default. Entering "1024 256" for [1024, 256].')
+    
+
+    return parser

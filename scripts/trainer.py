@@ -322,6 +322,12 @@ def search_train(args):
 
 def main():
     args = train_parse_arguments()
+    m = None
+    m = re.match(r"cuda:(\d+)", args.device)
+    if m is not None:
+       physical_id = m.group(1)
+       os.environ["CUDA_VISIBLE_DEVICES"] = physical_id
+       
     input_range = '[-1, 1]' if args.neg_input else '[0, 1]'
 
     print(f"\nDataset: {args.dataset}")

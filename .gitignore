@@ -5,3 +5,7 @@ IVcurve/**/*.svg
 
 # ignore cache 
 __pycache__
+
+# ignore dataset
+data/
+results/
