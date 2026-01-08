@@ -125,7 +125,10 @@ python -m scripts.MLP_KAN_trainer.py --exp_name exp1 \
                     --dataset MNIST \
                     --model_name MLP_CMTDAF
 ```
-You can train other model by change model_name to MLP_RTDAF, BSplineKAN, GottliebKAN. You could use `python -m scripts.MLP_KAN_trainer.py --help` or `python -m scripts.MLP_KAN_trainer.py -h` to see all available options.
+Other baseline models can be trained by specifying different values
+for the `--model_name` argument, including `MLP_RTDAF`, `BSplineKAN`,
+and `GottliebKAN`.
+You could use `python -m scripts.MLP_KAN_trainer.py --help` or `python -m scripts.MLP_KAN_trainer.py -h` to see all available options.
 
 ### Robustness to analogue pertubations
 We evaluate the robustness of KANalogue under different levels of relative
