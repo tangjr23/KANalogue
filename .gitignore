@@ -1,7 +1,25 @@
 # ignore imgs of IVcurves
-IVcurve/**/*.png
-IVcurve/**/*.pdf
-IVcurve/**/*.svg
+data/**/*.png
+data/**/*.pdf
+data/**/*.svg
 
-# ignore cache 
+# ignore cache
 __pycache__
+
+# ignore Python build artifacts
+*.egg-info/
+dist/
+build/
+*.pyc
+*.pyo
+
+
+FOLDERINFO.md
+*.pth
+*.pt
+*.pdf
+*.png
+
+results/
+data/*
+checkpoints/
